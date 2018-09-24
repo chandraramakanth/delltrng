@@ -1,0 +1,49 @@
+create table Employee(EmployeeID varchar2(20), EmployeeName varchar2(20), EmployeeAddress varchar2(20), DOB date, DOJ date, SALARY number(7,2));
+insert into table values(&eid,'&ename','&eaddress','&dob','&doj',&salary);
+Enter value for eid: 01
+Enter value for ename: ANIL
+Enter value for eaddress: HYD
+Enter value for dob: 30-Oct-1996
+Enter value for doj: 12-Jan-2014
+Enter value for salary: 20000
+/
+Enter value for eid: 02
+Enter value for ename: SYAM
+Enter value for eaddress: BLR
+Enter value for dob: 20-August-1995
+Enter value for doj: 30-Apr-2015
+Enter value for salary: 80000
+ /
+Enter value for eid: 03
+Enter value for ename: VIJAY
+Enter value for eaddress: PUNE
+Enter value for dob: 30-Jul-1990
+Enter value for doj: 15-Nov-2010
+Enter value for salary: 95000.5
+old   1: insert into employee values(&eid,'&ename','&eaddress','&dob','&doj',&salary)
+new   1: insert into employee values(03,'VIJAY','PUNE','30-Jul-1990','15-Nov-2010',95000.5)
+/
+Enter value for eid: 04
+Enter value for ename: RAMAKANTH
+Enter value for eaddress: VSP
+Enter value for dob: 30-Oct-1998
+Enter value for doj: 22-Oct-2018
+Enter value for salary: 21200.50
+/
+Enter value for eid: 05
+Enter value for ename: SIVAM
+Enter value for eaddress: PJB
+Enter value for dob: 15-Aug-1991
+Enter value for doj: 20-Nov-2009
+Enter value for salary: 4500.0
+commit;
+select * from employee;
+select EmployeeName from employee where salary > 20000;
+select employeename from employee where employeeaddress like '%a' or employeeaddress like '%p' or employeeaddress like '%r';
+update employee set salary = salary + (salary*0.02);
+delete from employee where salary < 5000;
+alter table employee add(email varchar2(30));
+update employee set email='anil@gmail.com' where employeeid=01;
+update employee set email='syam@gmail.com' where employeeid=02;
+update employee set email='vijay@gmail.com' where employeeid=03;
+update employee set email='ramakanth@gmail.com' where employeeid=04;
